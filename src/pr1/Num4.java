@@ -1,3 +1,5 @@
+package pr1;
+
 import java.util.Scanner;
 public class Num4 {
     public static void main(String[] args) {

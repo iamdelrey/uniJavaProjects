@@ -1,3 +1,5 @@
+package pr1;
+
 import java.util.Scanner;
 
 public class Main{
@@ -20,7 +22,7 @@ public class Main{
             sum += arr[i];
         }
 
-        int arMean = sum/size;
+        float arMean = ((float) sum)/size;
 
         System.out.println("Сумма элементов массива: " + sum);
         System.out.println("Среднее арифметическое элементов массива: " + arMean);

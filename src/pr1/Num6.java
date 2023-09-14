@@ -1,3 +1,5 @@
+package pr1;
+
 public class Num6 {
     public static void main(String[] args) {
         System.out.println("Первые 10 чисел гармонического ряда:");
