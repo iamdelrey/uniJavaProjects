@@ -2,7 +2,7 @@ package pr3.shapes;
 
 public class Square2 extends Rectangle {
     public Square2() {
-        this(0);
+        this(0, "transparent", false);
     }
 
     public Square2(double width) {

@@ -33,9 +33,9 @@ public class Ball {
         this.y = y;
     }
 
-    public void move(double x, double y) {
-        this.x += x;
-        this.y += y;
+    public void move(double xDisp, double yDisp) {
+        this.x += xDisp;
+        this.y += yDisp;
     }
 
     @Override

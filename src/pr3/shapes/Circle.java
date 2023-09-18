@@ -37,7 +37,4 @@ public class Circle extends Shape {
     public String toString() {
         return String.format("Ball R=%.03f", this.getRadius());
     }
-
-
-
 }
