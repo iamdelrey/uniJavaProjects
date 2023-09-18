@@ -9,6 +9,38 @@ public class MovableRectangle implements Movable {
         this.bottomRight = new MovablePoint(x2, y2, xSpeed, ySpeed);
     }
 
+    public int getTopLeftX() {
+        return topLeft.getX();
+    }
+
+    public int getTopLeftY() {
+        return topLeft.getY();
+    }
+
+    public int getBottomRightX() {
+        return bottomRight.getX();
+    }
+
+    public int getBottomRightY() {
+        return bottomRight.getY();
+    }
+
+    public int getTopLeftXSpeed() {
+        return topLeft.getXSpeed();
+    }
+
+    public int getTopLeftYSpeed() {
+        return topLeft.getYSpeed();
+    }
+
+    public int getBottomRightXSpeed() {
+        return bottomRight.getXSpeed();
+    }
+
+    public int getBottomRightYSpeed() {
+        return bottomRight.getYSpeed();
+    }
+
     @Override
     public void moveUp() {
         topLeft.moveUp();
