@@ -16,7 +16,6 @@ public class TestMovablePoint {
         System.out.println("X Speed: " + point2.getXSpeed());
         System.out.println("Y Speed: " + point2.getYSpeed());
 
-        // Пример движения точки
         System.out.println("\nMoving Point 2:");
         point2.moveUp();
         System.out.println("X: " + point2.getX());
@@ -31,7 +30,6 @@ public class TestMovablePoint {
         System.out.println("X: " + point2.getX());
         System.out.println("Y: " + point2.getY());
 
-        // Пример вывода в строку
         System.out.println("\nPoint 3:");
         MovablePoint point3 = new MovablePoint(40, 50, 10, 20);
         System.out.println(point3.toString());

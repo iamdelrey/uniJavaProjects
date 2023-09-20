@@ -5,7 +5,6 @@ public class CounterState {
     private int teamRightScore;
     private final String teamLeftName;
 
-
     private final String teamRightName;
 
     private boolean isLeftLastUpdated;
@@ -32,7 +31,6 @@ public class CounterState {
         teamRightScore++;
         isLeftLastUpdated = false;
     }
-
 
     public int getTeamLeftScore() {
         return teamLeftScore;

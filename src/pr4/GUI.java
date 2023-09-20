@@ -32,10 +32,8 @@ public class GUI extends JFrame {
         realButton.addActionListener(this::onIncrementReal);
 
         setLayout(new GridBagLayout());
-
         {
             var constraints = new GridBagConstraints();
-//            constraints.weightx = 1;
             constraints.gridy = 0;
             constraints.fill = GridBagConstraints.HORIZONTAL;
             add(scoreLabel, constraints);
@@ -65,7 +63,6 @@ public class GUI extends JFrame {
             constraints.gridy = 3;
             add(resultLabel, constraints);
         }
-
 
         setVisible(true);
         update();
