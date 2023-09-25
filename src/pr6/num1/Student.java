@@ -1,4 +1,4 @@
-package pr6;
+package pr6.num1;
 
 public class Student implements Comparable<Student> {
     private int iDNumber;
@@ -7,14 +7,6 @@ public class Student implements Comparable<Student> {
     public Student(int iDNumber, String name) {
         this.iDNumber = iDNumber;
         this.name = name;
-    }
-
-    public int getIDNumber() {
-        return iDNumber;
-    }
-
-    public String getName() {
-        return name;
     }
 
     @Override
