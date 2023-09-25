@@ -1,7 +1,5 @@
 package pr6.num1;
 
-import pr6.num1.Student;
-
 public class TestStudentSort {
     public static void main(String[] args) {
         Student[] students = {
