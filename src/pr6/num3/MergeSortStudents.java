@@ -1,6 +1,8 @@
 package pr6.num3;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class MergeSortStudents {
@@ -24,32 +26,15 @@ public class MergeSortStudents {
     }
 
     public static List<Student> mergeSort(List<Student> list1, List<Student> list2) {
-        List<Student> mergedList = new ArrayList<>();
-        int i = 0;
-        int j = 0;
+        List<Student> mergedList = new ArrayList<>(list1);
+        mergedList.addAll(list2);
 
-        while (i < list1.size() && j < list2.size()) {
-            Student student1 = list1.get(i);
-            Student student2 = list2.get(j);
-
-            if (student1.getGPA() > student2.getGPA()) {
-                mergedList.add(student1);
-                i++;
-            } else {
-                mergedList.add(student2);
-                j++;
+        Collections.sort(mergedList, new Comparator<Student>() {
+            @Override
+            public int compare(Student s1, Student s2) {
+                return Double.compare(s2.getGPA(), s1.getGPA());
             }
-        }
-
-        while (i < list1.size()) {
-            mergedList.add(list1.get(i));
-            i++;
-        }
-
-        while (j < list2.size()) {
-            mergedList.add(list2.get(j));
-            j++;
-        }
+        });
 
         return mergedList;
     }
