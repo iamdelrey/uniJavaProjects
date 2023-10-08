@@ -61,8 +61,7 @@ public class Animation extends JFrame {
         BufferedImage currentFrame = frames[currentFrameIndex];
         int x = (getWidth() - currentFrame.getWidth()) / 2;
         int y = (getHeight() - currentFrame.getHeight()) / 2;
-        //g.drawImage(currentFrame, x, y, null);
-        g.drawImage(currentFrame, x, y, getWidth(), getHeight(), null);
+        g.drawImage(currentFrame, x, y, currentFrame.getWidth(), currentFrame.getHeight(), null);
 
     }
 
