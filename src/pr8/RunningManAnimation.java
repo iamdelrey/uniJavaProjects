@@ -14,8 +14,8 @@ public class RunningManAnimation extends JPanel implements ActionListener {
 
     public RunningManAnimation() {
         manFrames = new ImageIcon[2];
-        manFrames[0] = new ImageIcon("C:\\Users\\stepa\\IdeaProjects\\uniJavaProjects\\src\\pr8\\java8_1.png");
-        manFrames[1] = new ImageIcon("C:\\Users\\stepa\\IdeaProjects\\uniJavaProjects\\src\\pr8\\java8_2.png");
+        manFrames[0] = new ImageIcon("/Users/anton/Desktop/uniJava/uniJavaProjects/src/pr8/java8_1.png");
+        manFrames[1] = new ImageIcon("/Users/anton/Desktop/uniJava/uniJavaProjects/src/pr8/java8_2.png");
         timer = new Timer(200, this);
         timer.start();
     }

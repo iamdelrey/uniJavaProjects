@@ -11,7 +11,7 @@ public class AppendToTheEndOfFile {
         System.out.println("Введите текст для добавления в файл: ");
         String newText = scanner.nextLine();
 
-        String filePath = "C:\\Users\\stepa\\IdeaProjects\\uniJavaProjects\\src\\pr13\\replace.txt";
+        String filePath = "/Users/anton/Desktop/uniJava/uniJavaProjects/src/pr13/replace.txt";
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true))) {
             writer.newLine();

@@ -10,7 +10,7 @@ public class ReplaceFileContent {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите новую информацию для замены в файле: ");
         String newContent = scanner.nextLine();
-        String filePath = "C:\\Users\\stepa\\IdeaProjects\\uniJavaProjects\\src\\pr13\\replace.txt";
+        String filePath = "/Users/anton/Desktop/uniJava/uniJavaProjects/src/pr13/replace.txt";
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             writer.write(newContent);
