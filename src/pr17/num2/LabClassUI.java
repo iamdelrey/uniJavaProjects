@@ -59,7 +59,6 @@ public class LabClassUI extends LabClass {
                     }
                     break;
                 case 4:
-                    // Сортировка студентов по GPA
                     sortStudentsByGPA();
                     System.out.println("Студенты отсортированы по GPA.");
                     break;

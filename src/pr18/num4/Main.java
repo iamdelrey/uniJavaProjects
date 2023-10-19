@@ -17,6 +17,6 @@ public class Main {
         System.out.println("Divide: " + Calculator.divide(num1, num2));
         System.out.println("Subtraction: " + Calculator.subtraction(num1, num2));
 
-        scanner.close(); // Закрываем Scanner после использования.
+        scanner.close();
     }
 }
