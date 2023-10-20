@@ -33,7 +33,6 @@ public class InnValidator {
         Scanner sc = new Scanner(System.in);
         System.out.print("Введите ИНН: ");
         String innToCheck = sc.nextLine(); //667204591180
-        //String innToCheck = "123456789012"; // Замените на нужный ИНН
         try {
             if (isValidInn(innToCheck)) {
                 System.out.println("Номер ИНН действителен.");
