@@ -1,31 +1,42 @@
 package pr20.num2;
 
-public class CalculatorModel {
-    private double result;
+import java.util.Stack;
 
-    public void performOperation(double operand1, double operand2, String operator) {
-        switch (operator) {
-            case "+":
-                result = operand1 + operand2;
-                break;
-            case "-":
-                result = operand1 - operand2;
-                break;
-            case "*":
-                result = operand1 * operand2;
-                break;
-            case "/":
-                if (operand2 != 0) {
-                    result = operand1 / operand2;
-                } else {
-                    // Обработка деления на ноль
-                    result = Double.NaN;
-                }
-                break;
-        }
+public class CalculatorModel {
+
+    private Stack<Double> stack;
+
+    public CalculatorModel() {
+        stack = new Stack<>();
     }
 
-    public double getResult() {
-        return result;
+    public void pushOperand(double operand) {
+        stack.push(operand);
+    }
+
+    public double popOperand() {
+        return stack.pop();
+    }
+
+    public boolean isStackEmpty() {
+        return stack.isEmpty();
+    }
+
+    public double performOperation(String operator, double operand1, double operand2) {
+        switch (operator) {
+            case "+":
+                return operand1 + operand2;
+            case "-":
+                return operand1 - operand2;
+            case "*":
+                return operand1 * operand2;
+            case "/":
+                if (operand2 == 0) {
+                    throw new ArithmeticException("Division by zero");
+                }
+                return operand1 / operand2;
+            default:
+                throw new IllegalArgumentException("Invalid operator: " + operator);
+        }
     }
 }
