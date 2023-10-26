@@ -62,23 +62,25 @@ public class CalculatorController {
                 view.displayErrorMessage(ex.getMessage());
             } catch (IllegalArgumentException ex) {
                 view.displayErrorMessage("Invalid expression");
+            } catch (RuntimeException ex) {
+                view.displayErrorMessage(ex.getMessage());
             }
         }
 
         private double evaluateRPN(String expression) {
             Stack<Double> stack = new Stack<>();
-            String[] tokens = expression.replaceAll("\\s+", "").split(""); // Удаляем пробелы и разбиваем выражение на токены
+            String[] tokens = expression.replaceAll("\\s+", " ").split(" "); // Удаляем пробелы и разбиваем выражение на токены
 
             for (String token : tokens) {
                 if (isNumeric(token)) {
                     stack.push(Double.parseDouble(token));
                 } else if (isOperator(token)) {
                     if (stack.size() < 2) {
-                        throw new IllegalArgumentException("Недостаточно операндов для оператора: " + token);
+                        throw new IllegalArgumentException("Not enough operands for operator: " + token);
                     }
                     double operand2 = stack.pop();
                     double operand1 = stack.pop();
-                    double result;
+                    double result = 0.0;
                     switch (token) {
                         case "+":
                             result = operand1 + operand2;
@@ -91,21 +93,28 @@ public class CalculatorController {
                             break;
                         case "/":
                             if (operand2 == 0) {
-                                throw new ArithmeticException("Деление на ноль");
+                                throw new ArithmeticException("Division by zero");
                             }
                             result = operand1 / operand2;
                             break;
+                        case "POP":
+                            if (stack.isEmpty()) {
+                                // Если стек пуст, игнорируем операцию "POP"
+                                continue;
+                            }
+                            stack.pop();
+                            break;
                         default:
-                            throw new IllegalArgumentException("Недопустимый оператор: " + token);
+                            throw new IllegalArgumentException("Invalid operator: " + token);
                     }
                     stack.push(result);
                 } else {
-                    throw new IllegalArgumentException("Недопустимый токен: " + token);
+                    throw new IllegalArgumentException("Invalid token: " + token);
                 }
             }
 
             if (stack.size() != 1) {
-                throw new IllegalArgumentException("Недостаточно операторов для вычисления");
+                throw new IllegalArgumentException("Not enough operators to perform the calculation");
             }
 
             return stack.pop();

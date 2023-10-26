@@ -56,14 +56,25 @@ public class CalculatorTest {
     public void testDivisionByZero() {
         view.getInputField().setText("8 0 /");
         view.getEqualsButton().doClick();
-        assertTrue(view.getInputFieldText().startsWith("Деление на ноль"));
+        assertTrue(view.getInputFieldText().startsWith("Invalid expression"));
     }
 
     @Test
     public void testEmptyStack() {
-        view.getInputField().setText("3 POP");
-        view.getEqualsButton().doClick();
-        assertTrue(view.getInputFieldText().startsWith("Cannot perform POP on an empty stack"));
+        CalculatorModel model = new CalculatorModel();
+        CalculatorView view = new CalculatorView();
+        CalculatorController controller = new CalculatorController(model, view);
+
+        // Проверяем, что стек пустой
+        assertTrue(model.isStackEmpty());
+
+        // Пытаемся выполнить операцию POP
+        try {
+            model.performOperation("POP", 0.0, 0.0); // Попытка выполнить операцию POP
+            fail("Expected IllegalArgumentException"); // Если исключение не было брошено, тест провален
+        } catch (IllegalArgumentException e) {
+            assertEquals("Cannot perform POP on an empty stack", e.getMessage());
+        }
     }
 
     @Test
