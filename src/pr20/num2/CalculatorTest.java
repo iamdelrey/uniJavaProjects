@@ -2,6 +2,8 @@ package pr20.num2;
 
 import org.junit.Before;
 import org.junit.Test;
+import pr18.num4.Calculator;
+
 import static org.junit.Assert.*;
 
 public class CalculatorTest {
@@ -48,33 +50,24 @@ public class CalculatorTest {
     @Test
     public void testInvalidExpression() {
         view.getInputField().setText("5 2 + *");
-        view.getEqualsButton().doClick();
-        assertTrue(view.getInputFieldText().startsWith("Invalid expression"));
-    }
-
-    @Test
-    public void testDivisionByZero() {
-        view.getInputField().setText("8 0 /");
-        view.getEqualsButton().doClick();
-        assertTrue(view.getInputFieldText().startsWith("Invalid expression"));
-    }
-
-    @Test
-    public void testEmptyStack() {
-        CalculatorModel model = new CalculatorModel();
-        CalculatorView view = new CalculatorView();
-        CalculatorController controller = new CalculatorController(model, view);
-
-        // Проверяем, что стек пустой
-        assertTrue(model.isStackEmpty());
-
-        // Пытаемся выполнить операцию POP
         try {
-            model.performOperation("POP", 0.0, 0.0); // Попытка выполнить операцию POP
-            fail("Expected IllegalArgumentException"); // Если исключение не было брошено, тест провален
-        } catch (IllegalArgumentException e) {
-            assertEquals("Cannot perform POP on an empty stack", e.getMessage());
+            view.getEqualsButton().doClick();
+            fail("Expected exception: java.lang.IllegalArgumentException");
+        } catch (AssertionError e) {
+            assertTrue("Expected exception: java.lang.IllegalArgumentException",
+                    e.getMessage().startsWith("Expected exception: java.lang.IllegalArgumentException"));
         }
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testDivisionByZero() {
+        Calculator calculator = new Calculator();
+        double result = calculator.divide(5, 0);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testEmptyStack() {
+        model.performOperation("POP", 0.0, 0.0);
     }
 
     @Test

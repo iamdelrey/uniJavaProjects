@@ -81,6 +81,9 @@ public class CalculatorController {
                     double operand2 = stack.pop();
                     double operand1 = stack.pop();
                     double result = 0.0;
+                    if (token.equals("/") && operand2 == 0) {
+                        throw new ArithmeticException("Division by zero");
+                    }
                     switch (token) {
                         case "+":
                             result = operand1 + operand2;
@@ -99,7 +102,6 @@ public class CalculatorController {
                             break;
                         case "POP":
                             if (stack.isEmpty()) {
-                                // Если стек пуст, игнорируем операцию "POP"
                                 continue;
                             }
                             stack.pop();
@@ -116,6 +118,8 @@ public class CalculatorController {
             if (stack.size() != 1) {
                 throw new IllegalArgumentException("Not enough operators to perform the calculation");
             }
+
+
 
             return stack.pop();
         }
