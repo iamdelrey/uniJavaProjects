@@ -3,10 +3,9 @@ package pr21.num2;
 import java.util.NoSuchElementException;
 
 class LinkedQueue<E> extends AbstractQueue<E> {
-    private Node<E> front; // Указатель на начало очереди
-    private Node<E> rear;  // Указатель на конец очереди
+    private Node<E> front;
+    private Node<E> rear;
 
-    // Внутренний класс для представления узла связанного списка
     private static class Node<E> {
         E value;
         Node<E> next;
@@ -17,7 +16,6 @@ class LinkedQueue<E> extends AbstractQueue<E> {
         }
     }
 
-    // Конструктор - инициализация пустой очереди
     public LinkedQueue() {
         front = null;
         rear = null;
