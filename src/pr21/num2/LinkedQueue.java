@@ -2,10 +2,9 @@ package pr21.num2;
 
 import java.util.NoSuchElementException;
 
-public class LinkedQueue<E> implements Queue<E> {
+class LinkedQueue<E> extends AbstractQueue<E> {
     private Node<E> front; // Указатель на начало очереди
     private Node<E> rear;  // Указатель на конец очереди
-    private int size;      // Размер очереди
 
     // Внутренний класс для представления узла связанного списка
     private static class Node<E> {
