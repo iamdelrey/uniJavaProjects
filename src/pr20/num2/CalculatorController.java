@@ -69,7 +69,7 @@ public class CalculatorController {
 
         private double evaluateRPN(String expression) {
             Stack<Double> stack = new Stack<>();
-            String[] tokens = expression.replaceAll("\\s+", " ").split(" "); // Удаляем пробелы и разбиваем выражение на токены
+            String[] tokens = expression.replaceAll("\\s+", " ").split(" ");
 
             for (String token : tokens) {
                 if (isNumeric(token)) {
@@ -159,7 +159,7 @@ public class CalculatorController {
     private class ResetButtonListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            view.setInputFieldText(""); // Очистите поле ввода при нажатии кнопки сброса
+            view.setInputFieldText("");
         }
     }
 }
