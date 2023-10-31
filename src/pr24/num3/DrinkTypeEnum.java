@@ -11,12 +11,12 @@ public enum DrinkTypeEnum {
     RUM,
     VERMOUTH,
     LIQUOR,
-    REIDEMEISTER,
+    JAGERMEISTER,
     JUICE,
     COFFEE,
     GREEN_TEA,
     BLACK_TEA,
     MILK,
     WATER,
-    JAGERMEISTER, SODA
+    SODA
 }
