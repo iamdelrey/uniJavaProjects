@@ -1,3 +1,5 @@
+package pr24.num3;
+
 public class MenuItem {
 
     private final int cost;

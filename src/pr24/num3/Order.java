@@ -1,3 +1,5 @@
+package pr24.num3;
+
 public interface Order {
 
     boolean add(MenuItem item);

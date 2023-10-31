@@ -1,3 +1,5 @@
+package pr24.num3;
+
 public final class Customer {
 
     private String firstName;

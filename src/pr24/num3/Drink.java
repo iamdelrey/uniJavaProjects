@@ -1,3 +1,5 @@
+package pr24.num3;
+
 public class Drink extends MenuItem implements Alcoholable {
 
     private final double alcoholVol;

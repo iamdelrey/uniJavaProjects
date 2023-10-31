@@ -1,3 +1,5 @@
+package pr24.num3;
+
 public class QueueNode {
     private QueueNode next;
     private QueueNode prev;

@@ -1,3 +1,5 @@
+package pr24.num3;
+
 public class InternetOrdersManager implements OrdersManager {
     private QueueNode head;
     private QueueNode tail;

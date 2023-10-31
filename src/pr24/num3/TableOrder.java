@@ -1,3 +1,4 @@
+package pr24.num3;
 
 import java.util.HashMap;
 

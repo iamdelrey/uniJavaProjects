@@ -1,3 +1,5 @@
+package pr24.num3;
+
 public interface OrdersManager {
     int itemsQuantity(String itemName);
     int itemsQuantity(MenuItem item);

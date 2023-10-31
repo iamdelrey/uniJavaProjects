@@ -1,3 +1,5 @@
+package pr24.num3;
+
 public class ListNode {
     private ListNode next;
     private MenuItem value;
