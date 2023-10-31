@@ -1,17 +1,19 @@
-package pr23.num2;
+package pr23.num3;
+
+import pr23.num2.Item;
 
 public final class Dish implements Item {
-    private final double cost;
-    private final String name;
-    private final String description;
+    private double cost;
+    private String name;
+    private String description;
 
     public static final double DEFAULT_COST = 0.0;
 
     public Dish(String name, String description) {
-        this(DEFAULT_COST, name, description);
+        this( name, description, DEFAULT_COST);
     }
 
-    public Dish(double cost, String name, String description) {
+    public Dish(String name, String description, double cost) {
         this.cost = cost;
         this.name = name;
         this.description = description;
@@ -21,6 +23,7 @@ public final class Dish implements Item {
     public double getCost() {
         return cost;
     }
+
     @Override
     public String getName() {
         return name;
@@ -29,5 +32,17 @@ public final class Dish implements Item {
     @Override
     public String getDescription() {
         return description;
+    }
+
+    public void setCost(double cost) {
+        this.cost = cost;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
